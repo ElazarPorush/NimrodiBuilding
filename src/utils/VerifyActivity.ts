@@ -1,13 +1,14 @@
+import { useParams } from "react-router-dom";
 import roles from "../data/roles.json";
+import { useSelector } from "react-redux";
 
-interface IuseActivityParams {
-  activity: string;
-  role: string;
-  activities: string[];
-}
-
-const useIsVerified = ({ activity, role, activities }: IuseActivityParams) => {
-  //FILL HERE 3.7
+const useIsVerified = () => {
+  const {index} = useParams()
+  const currRole = useSelector((state: any) => state.role)
+  if (roles.findIndex(currRole) >= +index){
+    return true
+  }
+  return false
 };
 
 export default useIsVerified;
