@@ -9,6 +9,7 @@ export const rolesSlice = createSlice({
             if (action.payload >= 0 && action.payload <= 4) {
                 state = data[action.payload]
             }
+            return state
         }
     }
 })

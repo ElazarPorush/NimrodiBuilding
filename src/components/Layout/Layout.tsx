@@ -3,17 +3,11 @@ import { Link, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useBuildingData from "../../utils/BuildingDataProvider";
 import "./Layout.css";
+import Reception from "../../pages/Reception/Reception";
 
 const Layout: React.FC = () => {
-  const floorAccess = useSelector(
-    (state: {
-      floorAccess: {
-        floorAccess: [boolean, boolean, boolean, boolean, boolean];
-      };
-    }) => state.floorAccess.floorAccess
-  );
+  const floorAccess = useSelector((state: any) => state.floorAccess)
   const { getFloorByIndex } = useBuildingData();
-
   return (
     <div className="layout-page">
       <nav className="navbar">
@@ -27,7 +21,7 @@ const Layout: React.FC = () => {
           ))}
         </div>
       </nav>
-
+      <Reception /> 
       <Outlet />
 
       <footer className="layout-footer">

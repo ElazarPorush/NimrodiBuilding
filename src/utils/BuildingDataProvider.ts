@@ -13,7 +13,9 @@ interface Floor {
 const useBuildingData = () => {
   const [buildingData, setBuildingData] = useState<Floor[]>([]);
   //FILL HERE LOGIC TO SET THE BUILDING DATA
-  setBuildingData(data)
+  useEffect(() => {
+    setBuildingData(data)
+  }, [])
 
 
   const getFloorByIndex = (floorIndex:number): Floor |undefined =>
