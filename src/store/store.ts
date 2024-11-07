@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { accessSlice } from "./floorreducer";
-import { rolesSlice } from "./Rolereducer";
+import { rolesSlice } from "./rolereducer";
 
 export default configureStore({
     reducer: {
@@ -10,7 +10,7 @@ export default configureStore({
 })
 
 export const {
-    changeStatus,
+    changeAccess,
     setRole
 } = {
     ...accessSlice.actions,

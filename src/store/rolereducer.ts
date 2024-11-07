@@ -5,9 +5,9 @@ export const rolesSlice = createSlice({
     name: "role",
     initialState: "Unknown Personnel",
     reducers: {
-        setRole: (state: string, action: PayloadAction<string>) => {
-            if (data.includes(action.payload)) {
-                state = action.payload
+        setRole: (state: string, action: PayloadAction<number>) => {
+            if (action.payload >= 0 && action.payload <= 4) {
+                state = data[action.payload]
             }
         }
     }

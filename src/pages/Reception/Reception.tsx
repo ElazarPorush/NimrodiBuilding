@@ -1,10 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeAccess } from "../../store/floorreducer";
-import { setRole } from "../../store/Rolereducer";
 import useBuildingData from "../../utils/BuildingDataProvider";
 import optionalroles from "../../data/roles.json";
 import "./Reception.css";
+import { changeAccess, setRole } from "../../store/store";
 
 const Reception: React.FC = () => {
   const floorAccess = useSelector(
